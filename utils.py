@@ -1,5 +1,4 @@
 import streamlit as st
-from utils import save_data
 import uuid
 
 st.title("Emotion Engine")
