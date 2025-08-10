@@ -11,7 +11,6 @@ This system explores a future where:
 - Time is a first-class citizen in programming
 - Debugging becomes a journey, not just a fix
 
-We envision tools that feel intuitive, empathetic, and alive—where programming becomes a natural extension of human cognition.
-
+We envision tools that feel intuitive, empathetic, and alive.
 This is not just a framework. It’s a philosophy.
 """)
