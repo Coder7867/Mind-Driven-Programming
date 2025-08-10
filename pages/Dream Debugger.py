@@ -1,8 +1,15 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils import save_data, load_data
+import streamlit as st
 import uuid
+import importlib.util
+import os
+
+utils_path = os.path.abspath(os.path.join(os.path.dirname( *file*), '..', 'utils.py'))
+spec = importlib.util.spec_from_file_location("utils", utils_path)
+utils = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(utils)
+
+save_data = utils.save_data
+
 st.title("Dream Debugger")
 
 st.markdown("Visualize your logic as a narrative journey. Enter your logic steps below.")
