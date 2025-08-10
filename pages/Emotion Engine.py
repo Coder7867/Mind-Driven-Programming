@@ -1,4 +1,6 @@
 import streamlit as st
+from utils import save_data
+import uuid
 
 st.title("Emotion Engine")
 
@@ -22,5 +24,6 @@ if st.button("Apply Tone"):
         modified = apply_tone(message, tone)
         st.subheader("Modified Message")
         st.write(modified)
+        save_data("data/messages.json", str(uuid.uuid4()), {"message": message, "tone": tone, "modified": modified})
     else:
         st.warning("Please enter a message to apply tone.")
