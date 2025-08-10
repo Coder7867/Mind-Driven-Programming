@@ -1,7 +1,7 @@
-import streamlit as st
-from utils import save_data
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import uuid
-
 st.title("Dream Debugger")
 
 st.markdown("Visualize your logic as a narrative journey. Enter your logic steps below.")
