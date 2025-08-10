@@ -3,7 +3,7 @@ import uuid
 import importlib.util
 import os
 
-utils_path = os.path.abspath(os.path.join(os.path.dirname( *file*), '..', 'utils.py'))
+utils_path = os.path.abspath(os.path.join(os.path.dirname( __file__), '..', 'utils.py'))
 spec = importlib.util.spec_from_file_location("utils", utils_path)
 utils = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(utils)
