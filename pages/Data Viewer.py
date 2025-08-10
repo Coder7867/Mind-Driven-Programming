@@ -1,7 +1,14 @@
-import sys
+import streamlit as st
+import importlib.util
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils import save_data, load_data
+
+utils_path = os.path.abspath(os.path.join(os.path.dirname( *file*), '..', 'utils.py'))
+spec = importlib.util.spec_from_file_location("utils", utils_path)
+utils = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(utils)
+
+load_data = utils.load_data
+
 st.title("Data Viewer")
 
 st.markdown("Browse all saved thoughts, logic, and messages.")
