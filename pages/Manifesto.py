@@ -1,4 +1,6 @@
 import streamlit as st
+from utils import save_data
+import uuid
 
 st.title("Manifesto")
 
@@ -12,5 +14,7 @@ This system explores a future where:
 - Debugging becomes a journey, not just a fix
 
 We envision tools that feel intuitive, empathetic, and alive.
-This is not just a framework. It’s a philosophy.
+
 """)
+
+save_data("data/messages.json", str(uuid.uuid4()), {"manifesto": "Mind-Driven Programming philosophy saved."})
