@@ -1,5 +1,6 @@
 import streamlit as st
-import json
+from utils import save_data
+import uuid
 import datetime
 
 st.title("Temporal Logic")
@@ -19,5 +20,6 @@ if st.button("Generate Temporal Logic"):
 }
         st.subheader("Generated Logic")
         st.json(logic)
+        save_data("data/logic.json", str(uuid.uuid4()), logic)
     else:
         st.warning("Please fill in all fields to generate logic.")
