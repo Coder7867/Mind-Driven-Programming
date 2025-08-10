@@ -1,9 +1,14 @@
-import sys
+import streamlit as st
+import importlib.util
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from utils import save_data, load_data
 import uuid
+
+utils_path = os.path.abspath(os.path.join(os.path.dirname( *file*), '..', 'utils.py'))
+spec = importlib.util.spec_from_file_location("utils", utils_path)
+utils = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(utils)
+
+save_data = utils.save_data
 
 st.title("Manifesto")
 
@@ -16,8 +21,9 @@ This system explores a future where:
 - Time is a first-class citizen in programming
 - Debugging becomes a journey, not just a fix
 
-We envision tools that feel intuitive, empathetic, and alive.
+We envision tools that feel intuitive, empathetic, and alive—where programming becomes a natural extension of human cognition.
 
+This is not just a framework. It’s a philosophy.
 """)
 
 save_data("data/messages.json", str(uuid.uuid4()), {"manifesto": "Mind-Driven Programming philosophy saved."})
