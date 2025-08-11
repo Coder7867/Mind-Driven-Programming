@@ -16,29 +16,43 @@ Experience a live demo:
 - No reliance on traditional syntax
 - Modular and extensible design
 
-## Getting Started
+## Requirements
 
-### Prerequisites
+- streamlit>=1.10
+- openai
+- numpy
+- pandas
+- scikit-learn
+- matplotlib
+- seaborn
 
-- [List any requirements, e.g., Python 3.x, Streamlit, etc.]
-- [Any hardware or software dependencies]
+## Installation
 
-### Installation
-
+First, clone the repository:
 ```bash
-# Clone the repository
 git clone https://github.com/Coder7867/Mind-Driven-Programming-Engine.git
-
-# Install dependencies
-[installation steps here]
+cd Mind-Driven-Programming-Engine
 ```
 
-### Usage
-
+Then, install the required dependencies:
 ```bash
-# Example usage command
-[usage instructions here]
+pip install streamlit>=1.10 openai numpy pandas scikit-learn matplotlib seaborn
 ```
+
+Or, using a `requirements.txt`:
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+To run the Mind-Driven Programming Engine locally, use the following command:
+```bash
+streamlit run app.py
+```
+Replace `app.py` with the main Streamlit script if different.
+
+Open the provided local URL in your browser to start interacting with the interface.
 
 ## Contributing
 
